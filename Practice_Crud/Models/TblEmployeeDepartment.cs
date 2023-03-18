@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public class TblEmployeeDepartment
    {
@@ -19,7 +19,7 @@ namespace Practice_Crud.Models
       [NotMapped]
       public TblBusinessUnit BusinessUnit { get; set; }
       public string StrRemarks { get; set; }
-      public long? IntActionBy { get; set; }
+      public string? IntActionBy { get; set; }
       public DateTime? DteLastActionDateTime { get; set; }
       public DateTime? DteServerDateTime { get; set; }
       public bool? IsCorporate { get; set; }

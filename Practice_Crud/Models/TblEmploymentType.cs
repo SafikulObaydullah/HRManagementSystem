@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public class TblEmploymentType
    {
@@ -17,7 +17,7 @@ namespace Practice_Crud.Models
       public long IntBusinessUnitId { get; set; }
       [NotMapped]
       public TblBusinessUnit TblBusinessUnit { get; set; }  
-      public long IntActionBy { get; set; }
+      public string? IntActionBy { get; set; }
       public DateTime DteLastActionDateTime { get; set; }
       public DateTime DteServerDateTime { get; set; }
       public bool? IsActive { get; set; }

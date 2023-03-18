@@ -1,8 +1,8 @@
-﻿using Practice_Crud.Models;
+﻿using HRMSystem.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Practice_Crud.DTO
+namespace HRMSystem.DTO
 {
    public  class BankBranchDTO
    {

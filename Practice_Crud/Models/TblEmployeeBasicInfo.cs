@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using HRM_API.Models;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public  class TblEmployeeBasicInfo
    {

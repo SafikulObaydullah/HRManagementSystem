@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public class UnitOfWork : IUnitOfWork
    {

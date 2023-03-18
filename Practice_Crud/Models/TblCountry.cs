@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public class TblCountry
    {
@@ -9,7 +9,7 @@ namespace Practice_Crud.Models
       public string StrCountryCode { get; set; }
       public string StrDialingCode { get; set; }
       public string StrCountryName { get; set; }
-      public long IntActionBy { get; set; }
+      public string? IntActionBy { get; set; }
       public DateTime DteLastActionDateTime { get; set; }
       public DateTime DteServerDateTime { get; set; }
       public bool? IsActive { get; set; }

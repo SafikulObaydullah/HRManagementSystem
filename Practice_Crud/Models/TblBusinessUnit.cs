@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public class TblBusinessUnit
    {
@@ -11,7 +11,7 @@ namespace Practice_Crud.Models
       public string StrBusinessUnitCode { get; set; }
       public string StrBusinessUnitName { get; set; }
       public string StrBusinessUnitAddress { get; set; }
-      public long IntActionBy { get; set; }
+      public string? IntActionBy { get; set; }
       public DateTime DteLastActionDateTime { get; set; }
       public DateTime DteServerDateTime { get; set; }
       public bool? IsActive { get; set; }

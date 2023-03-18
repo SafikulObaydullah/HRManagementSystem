@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Practice_Crud.Controllers
+namespace HRMSystem.Controllers
 {
    [ApiController]
    [Route("[controller]")]

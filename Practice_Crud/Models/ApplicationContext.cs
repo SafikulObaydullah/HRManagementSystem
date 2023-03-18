@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HRM_API.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public class ApplicationContext :DbContext
    {

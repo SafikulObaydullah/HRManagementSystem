@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public interface IBankBranchRepository : IGenericRepository<TblBankBranch>
    {

@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
    {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public class TblDivision
    {
@@ -14,8 +14,6 @@ namespace Practice_Crud.Models
       public long IntCountryId { get; set; }
       [NotMapped]
       public TblCountry Country { get; set; }
-      public string StrCountryName { get; set; }
       public bool? IsActive { get; set; }
-      public string StrDivitionBanglaName { get; set; }
    }
 }

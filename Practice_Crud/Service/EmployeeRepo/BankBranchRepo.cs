@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public class BankBranchRepo : GenericRepository<TblBankBranch>, IBankBranchRepository
    {

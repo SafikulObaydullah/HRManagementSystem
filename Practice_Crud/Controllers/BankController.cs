@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Practice_Crud.DTO;
-using Practice_Crud.Models;
+using HRMSystem.DTO;
+using HRMSystem.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Practice_Crud.Controllers
+namespace HRMSystem.Controllers
 {
    [Route("api/[controller]")]
    [ApiController]

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Practice_Crud.Models
+namespace HRMSystem.Models
 {
    public class EmployeeBasiceInfo
    {

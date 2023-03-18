@@ -1,4 +1,4 @@
-namespace Practice_Crud
+namespace HRMSystem
 {
    public class WeatherForecast
    {

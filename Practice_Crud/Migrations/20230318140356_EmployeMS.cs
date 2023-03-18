@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Practice_Crud.Migrations
+namespace HRM_API.Migrations
 {
     /// <inheritdoc />
-    public partial class UOW : Migration
+    public partial class EmployeMS : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -80,7 +80,7 @@ namespace Practice_Crud.Migrations
                     StrBusinessUnitCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrBusinessUnitName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrBusinessUnitAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: false),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: true),
@@ -106,7 +106,7 @@ namespace Practice_Crud.Migrations
                     StrCountryCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrDialingCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrCountryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: false),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: true)
@@ -125,9 +125,7 @@ namespace Practice_Crud.Migrations
                     StrDivisionGeocode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrDivision = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IntCountryId = table.Column<long>(type: "bigint", nullable: false),
-                    StrCountryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: true),
-                    StrDivitionBanglaName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    IsActive = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -151,6 +149,21 @@ namespace Practice_Crud.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EmployeeBasiceInfo",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmployeeBasiceInfo", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "EmployeeDepartment",
                 columns: table => new
                 {
@@ -161,7 +174,7 @@ namespace Practice_Crud.Migrations
                     IntAccountId = table.Column<long>(type: "bigint", nullable: true),
                     IntBusinessUnitId = table.Column<long>(type: "bigint", nullable: true),
                     StrRemarks = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: true),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsCorporate = table.Column<bool>(type: "bit", nullable: true),
@@ -195,7 +208,7 @@ namespace Practice_Crud.Migrations
                     StrEmploymentType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IntAccountId = table.Column<long>(type: "bigint", nullable: false),
                     IntBusinessUnitId = table.Column<long>(type: "bigint", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: false),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: true)
@@ -226,7 +239,7 @@ namespace Practice_Crud.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     StrPositionGroupCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrPositionGroupName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: false),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: true)
@@ -245,7 +258,7 @@ namespace Practice_Crud.Migrations
                     StrPositionCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrPositionName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IntPositionGroupId = table.Column<long>(type: "bigint", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: false),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: true)
@@ -278,7 +291,7 @@ namespace Practice_Crud.Migrations
                     StrBankName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrBankShortName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrBankCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: false),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: true)
@@ -302,7 +315,7 @@ namespace Practice_Crud.Migrations
                     SrtPositionName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsManagement = table.Column<bool>(type: "bit", nullable: true),
                     StrRemarks = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: true),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: true)
@@ -334,7 +347,7 @@ namespace Practice_Crud.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     StrWorkplaceGroupName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrWorkplaceGroupCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: false),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: true)
@@ -354,7 +367,7 @@ namespace Practice_Crud.Migrations
                     StrDistrictGeocode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StrDistrictName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IntCountryId = table.Column<long>(type: "bigint", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: false),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: true)
@@ -387,6 +400,7 @@ namespace Practice_Crud.Migrations
                     IntSl = table.Column<long>(type: "bigint", nullable: false),
                     IntPositionId = table.Column<long>(type: "bigint", nullable: false),
                     IntPositionGroupId = table.Column<long>(type: "bigint", nullable: false),
+                    IntAccountId = table.Column<long>(type: "bigint", nullable: false),
                     IntActionBy = table.Column<long>(type: "bigint", nullable: false),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -397,10 +411,16 @@ namespace Practice_Crud.Migrations
                 {
                     table.PrimaryKey("PK_EmployeeGrades", x => x.IntEmpGradeId);
                     table.ForeignKey(
-                        name: "FK_EmployeeGrades_Positions_IntPositionId",
-                        column: x => x.IntPositionId,
-                        principalTable: "Positions",
-                        principalColumn: "IntPositionId",
+                        name: "FK_EmployeeGrades_Accounts_IntAccountId",
+                        column: x => x.IntAccountId,
+                        principalTable: "Accounts",
+                        principalColumn: "IntAccountId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EmployeeGrades_PositionGroups_IntPositionGroupId",
+                        column: x => x.IntPositionGroupId,
+                        principalTable: "PositionGroups",
+                        principalColumn: "IntPositionGroupId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -415,14 +435,12 @@ namespace Practice_Crud.Migrations
                     StrBankBranchAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IntCountryId = table.Column<long>(type: "bigint", nullable: true),
                     IntBankId = table.Column<long>(type: "bigint", nullable: true),
-                    StrBankName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StrBankShortName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StrBankCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: true),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StrRoutingNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: true)
+                    IsActive = table.Column<bool>(type: "bit", nullable: true),
+                    TblBankIntBankId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -433,8 +451,8 @@ namespace Practice_Crud.Migrations
                         principalTable: "Country",
                         principalColumn: "IntCountryId");
                     table.ForeignKey(
-                        name: "FK_tblBankBranches_tblBanks_IntBankId",
-                        column: x => x.IntBankId,
+                        name: "FK_tblBankBranches_tblBanks_TblBankIntBankId",
+                        column: x => x.TblBankIntBankId,
                         principalTable: "tblBanks",
                         principalColumn: "IntBankId");
                 });
@@ -510,19 +528,15 @@ namespace Practice_Crud.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IntEmployeeId = table.Column<long>(type: "bigint", nullable: false),
                     StrEmployeeCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntBankId = table.Column<long>(type: "bigint", nullable: false),
-                    StrBankName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IntBankBranchId = table.Column<long>(type: "bigint", nullable: false),
-                    StrBankBranchName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StrBankRoutingNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StrAccountNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StrAccountName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IntBankId = table.Column<long>(type: "bigint", nullable: true),
+                    IntBankBranchId = table.Column<long>(type: "bigint", nullable: true),
+                    AccountId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IntBusinessunitId = table.Column<long>(type: "bigint", nullable: false),
-                    IntActionBy = table.Column<long>(type: "bigint", nullable: false),
+                    IntActionBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DteLastActionDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DteServerDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    StrDocumentPath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StrDocumentPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StrSwiftCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IntCountryId = table.Column<long>(type: "bigint", nullable: true),
                     StrDistrictName = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -565,19 +579,24 @@ namespace Practice_Crud.Migrations
                 column: "IntEmployeeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EmployeeGrades_IntPositionId",
+                name: "IX_EmployeeGrades_IntAccountId",
                 table: "EmployeeGrades",
-                column: "IntPositionId");
+                column: "IntAccountId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tblBankBranches_IntBankId",
-                table: "tblBankBranches",
-                column: "IntBankId");
+                name: "IX_EmployeeGrades_IntPositionGroupId",
+                table: "EmployeeGrades",
+                column: "IntPositionGroupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tblBankBranches_IntCountryId",
                 table: "tblBankBranches",
                 column: "IntCountryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tblBankBranches_TblBankIntBankId",
+                table: "tblBankBranches",
+                column: "TblBankIntBankId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TblEmployeeBasicInfos_EmpGradeId",
@@ -604,9 +623,6 @@ namespace Practice_Crud.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Accounts");
-
-            migrationBuilder.DropTable(
                 name: "BloodGroup");
 
             migrationBuilder.DropTable(
@@ -622,6 +638,9 @@ namespace Practice_Crud.Migrations
                 name: "EmployeBankInformation");
 
             migrationBuilder.DropTable(
+                name: "EmployeeBasiceInfo");
+
+            migrationBuilder.DropTable(
                 name: "EmployeeDepartment");
 
             migrationBuilder.DropTable(
@@ -629,9 +648,6 @@ namespace Practice_Crud.Migrations
 
             migrationBuilder.DropTable(
                 name: "LineManager");
-
-            migrationBuilder.DropTable(
-                name: "PositionGroups");
 
             migrationBuilder.DropTable(
                 name: "Supervisors");
@@ -664,10 +680,16 @@ namespace Practice_Crud.Migrations
                 name: "EmployeeGrades");
 
             migrationBuilder.DropTable(
+                name: "Positions");
+
+            migrationBuilder.DropTable(
                 name: "WorkplaceGroups");
 
             migrationBuilder.DropTable(
-                name: "Positions");
+                name: "Accounts");
+
+            migrationBuilder.DropTable(
+                name: "PositionGroups");
         }
     }
 }
