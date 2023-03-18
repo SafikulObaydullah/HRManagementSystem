@@ -79,10 +79,7 @@ namespace Practice_Crud.Controllers
          {
             StrBankBranchName = branch.StrBankBranchName,   
             StrBankBranchAddress= branch.StrBankBranchAddress, 
-            StrBankBranchCode= branch.StrBankBranchCode, 
-            StrBankCode= branch.StrBankCode, 
-            StrBankName= branch.StrBankName, 
-            StrBankShortName= branch.StrBankShortName,   
+            StrBankBranchCode= branch.StrBankBranchCode,   
             StrRoutingNo= branch.StrRoutingNo,  
             DteServerDateTime= branch.DteServerDateTime, 
             DteLastActionDateTime= branch.DteLastActionDateTime,  
@@ -106,11 +103,8 @@ namespace Practice_Crud.Controllers
          if (updata != null)
          {
             updata.StrBankBranchName= branch.StrBankBranchName;
-            updata.StrBankName = branch.StrBankName;
             updata.StrBankBranchAddress = branch.StrBankBranchAddress;
             updata.StrBankBranchCode = branch.StrBankBranchCode;
-            updata.StrBankCode = branch.StrBankCode;
-            updata.StrBankShortName = branch.StrBankShortName;
             updata.StrRoutingNo = branch.StrRoutingNo;
             updata.DteServerDateTime = branch.DteServerDateTime;
             updata.DteLastActionDateTime = branch.DteLastActionDateTime;

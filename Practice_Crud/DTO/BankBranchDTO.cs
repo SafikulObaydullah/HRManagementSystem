@@ -17,7 +17,7 @@ namespace Practice_Crud.DTO
       public string StrBankName { get; set; }
       public string StrBankShortName { get; set; }
       public string StrBankCode { get; set; }
-      public long? IntActionBy { get; set; }
+      public string? IntActionBy { get; set; }
       public string StrRoutingNo { get; set; }
       public DateTime? DteLastActionDateTime { get; set; }
       public DateTime? DteServerDateTime { get; set; }
