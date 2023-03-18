@@ -1,6 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using HRMSystem.Models;
+using HRM_API;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 {
    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddAuthentication();
+builder.Services.ConfigureIdentity();
+
 builder.Services.AddCors(x => x.AddPolicy("MyPolicy", builder =>
 {
    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
