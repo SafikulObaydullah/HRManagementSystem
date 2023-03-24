@@ -16,7 +16,7 @@ namespace HRMSystem.Models
       public TblCountry Country { get; set; }
       [ForeignKey("TblBank")]
       public long? IntBankId { get; set; }
-      //public TblBank TblBank { get; set; }
+      public TblBank TblBank { get; set; }
       //public string StrBankName { get; set; }
       //public string StrBankShortName { get; set; }
       //public string StrBankCode { get; set; }
