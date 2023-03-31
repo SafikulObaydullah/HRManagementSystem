@@ -2,6 +2,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using HRMSystem.Models;
 using HRM_API;
+using HRM_API.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,7 @@ builder.Services.AddCors(x => x.AddPolicy("MyPolicy", builder =>
 
 builder.Services.AddTransient<IBankBranchRepository, BankBranchRepo>();
 builder.Services.AddTransient<IBankRepository, BankRepo>();
+builder.Services.AddTransient<ICountryRepository, CountryRepo>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 var app = builder.Build();
 
@@ -36,7 +38,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors();
+app.UseCors("MyPolicy");
 app.UseAuthorization();
 
 app.MapControllers();

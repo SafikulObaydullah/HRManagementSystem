@@ -1,4 +1,5 @@
 ﻿
+using HRM_API.Interfaces;
 using System;
 
 namespace HRMSystem.Models
@@ -7,16 +8,18 @@ namespace HRMSystem.Models
    {
       private readonly ApplicationContext _context;
       public IBankBranchRepository BranchRepository { get; }
-
       public IBankRepository BankRepository { get; }
+      public ICountryRepository CountryRepository { get; }
 
       public UnitOfWork(ApplicationContext context,
          IBankBranchRepository bankBranchRepository,
-         IBankRepository bankRepository)
+         IBankRepository bankRepository,
+         ICountryRepository countryRepository)
       {
          this._context = context;
          this.BranchRepository = bankBranchRepository;
          this.BankRepository = bankRepository;
+         this.CountryRepository= countryRepository;
       }
       public int Complete()
       {

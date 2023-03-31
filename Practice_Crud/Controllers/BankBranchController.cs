@@ -72,7 +72,7 @@ namespace HRMSystem.Controllers
       //   return data;
       //}
       [HttpPost]
-      [Route("CreateBankBranch")]
+      //[Route("CreateBankBranch")]
       public IActionResult CreateBankBranch(BankBranchDTO branch)
       {
          TblBankBranch bankBranch = new TblBankBranch()
